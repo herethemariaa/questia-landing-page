@@ -1,58 +1,26 @@
+import { PLATFORM_URL, FOOTER } from '../../data/content';
 import iconQuestia from '../../assets/icon-questia.png';
-import { FOOTER } from '../../data/content';
+import { Star12 } from '../../components/Star12/Star12';
 import styles from './Footer.module.css';
 
 /**
- * Footer — Rodapé institucional da landing page.
+ * Footer — Rodapé limpo e institucional com a identidade do Questia e Conexão Lamarr.
  */
 export function Footer() {
   return (
     <footer className={styles.footer} role="contentinfo">
-      <div className={`container ${styles.inner}`}>
-        <div className={styles.topRow}>
-          <div className={styles.brandCol}>
-            <div className={styles.brand}>
-              <img
-                src={iconQuestia}
-                alt=""
-                width={36}
-                height={36}
-                aria-hidden="true"
-                className={styles.brandIcon}
-              />
-              <span className={styles.brandName}>Questia</span>
-            </div>
-            <p className={styles.tagline}>{FOOTER.tagline}</p>
-          </div>
-
-          <div className={styles.linksCol}>
-            <h3 className={styles.navTitle}>Navegação</h3>
-            <ul className={styles.linksList} role="list">
-              {FOOTER.links.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href} className={styles.link}>
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className={styles.contactCol}>
-            <h3 className={styles.navTitle}>Contato</h3>
-            <p className={styles.contactEmail}>
-              <a href={`mailto:${FOOTER.contact}`} className={styles.link}>
-                {FOOTER.contact}
-              </a>
-            </p>
-          </div>
+      <div className={`container ${styles.foot}`}>
+        <div className={styles.left}>
+          <img src={iconQuestia} alt="" width={24} height={24} className={styles.icon} />
+          <span className={styles.brandTitle}>QUESTIA</span>
+          <span className={styles.sep}>·</span>
+          <span>{FOOTER.credits}</span>
         </div>
-
-        <div className={styles.bottomRow}>
-          <p className={styles.credits}>{FOOTER.credits}</p>
-          <p className={styles.copyright}>
-            &copy; {FOOTER.year} Questia. Todos os direitos reservados.
-          </p>
+        <div className={styles.right}>
+          <a href={PLATFORM_URL} target="_blank" rel="noopener noreferrer" className={styles.link}>
+            <span>Acessar questia-mvp.netlify.app</span>
+            <Star12 size={12} color="var(--color-amber-gold)" />
+          </a>
         </div>
       </div>
     </footer>

@@ -1,39 +1,37 @@
 import { useState, useEffect } from 'react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import iconQuestia from '../../assets/icon-questia.png';
+import { Star12 } from '../Star12/Star12';
 import { Button } from '../Button/Button';
 import { NAV_LINKS, PLATFORM_URL } from '../../data/content';
 import styles from './Navbar.module.css';
 
 /**
- * Navbar — navegação principal da landing page.
- * Sticky com backdrop blur após scroll, menu hambúrguer no mobile.
+ * Navbar — Barra de navegação espaçosa, nítida e bem alinhada.
  */
 export function Navbar() {
-  const [menuOpen, setMenuOpen]   = useState(false);
-  const [scrolled, setScrolled]   = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  /* Detecta scroll para adicionar backdrop */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  /* Fecha o menu ao redimensionar para desktop */
   useEffect(() => {
-    const onResize = () => { if (window.innerWidth > 768) setMenuOpen(false); };
+    const onResize = () => { if (window.innerWidth > 960) setMenuOpen(false); };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  /* Impede scroll do body quando menu mobile está aberto */
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
   const closeMenu = () => setMenuOpen(false);
-  const toggleMenu = () => setMenuOpen(prev => !prev);
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   return (
     <header
@@ -44,7 +42,7 @@ export function Navbar() {
         className={`${styles.nav} container`}
         aria-label="Navegação principal"
       >
-        {/* Logo */}
+        {/* Logo oficial do Questia com estrela */}
         <a
           href="#inicio"
           className={styles.brand}
@@ -53,16 +51,21 @@ export function Navbar() {
         >
           <img
             src={iconQuestia}
-            alt=""
-            width={36}
-            height={36}
-            aria-hidden="true"
+            alt="Questia"
+            width={38}
+            height={38}
             className={styles.brandIcon}
           />
-          <span className={styles.brandName}>Questia</span>
+          <div className={styles.brandInfo}>
+            <div className={styles.brandTitleRow}>
+              <span className={styles.brandName}>QUESTIA</span>
+              <Star12 size={13} color="var(--color-amber-gold)" />
+            </div>
+            <span className={styles.brandSub}>Conexão Lamarr</span>
+          </div>
         </a>
 
-        {/* Links desktop */}
+        {/* Links de navegação desktop espaçados */}
         <ul className={styles.desktopLinks} role="list">
           {NAV_LINKS.map(({ label, href }) => (
             <li key={href}>
@@ -73,27 +76,25 @@ export function Navbar() {
           ))}
         </ul>
 
-        {/* CTA desktop */}
+        {/* Botão de ação à direita */}
         <div className={styles.desktopActions}>
-          <Button href={PLATFORM_URL} variant="primary">
-            Acessar plataforma
+          <Button href={PLATFORM_URL} variant="primary" icon={ArrowUpRight}>
+            Acessar Plataforma
           </Button>
         </div>
 
-        {/* Hambúrguer (mobile) */}
+        {/* Botão mobile */}
         <button
           className={styles.hamburger}
-          aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+          aria-label={menuOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'}
           aria-expanded={menuOpen}
           onClick={toggleMenu}
         >
-          <span className={`${styles.bar} ${menuOpen ? styles.barTopOpen   : ''}`} />
-          <span className={`${styles.bar} ${menuOpen ? styles.barMidOpen   : ''}`} />
-          <span className={`${styles.bar} ${menuOpen ? styles.barBotOpen   : ''}`} />
+          {menuOpen ? <X size={26} color="#FFFFFF" /> : <Menu size={26} color="#FFFFFF" />}
         </button>
       </nav>
 
-      {/* Painel mobile */}
+      {/* Menu mobile expansível */}
       <div
         className={`${styles.mobilePanel} ${menuOpen ? styles.mobilePanelOpen : ''}`}
         aria-hidden={!menuOpen}
@@ -108,13 +109,12 @@ export function Navbar() {
           ))}
         </ul>
         <div className={styles.mobileCta}>
-          <Button href={PLATFORM_URL} variant="primary" onClick={closeMenu}>
-            Acessar plataforma
+          <Button href={PLATFORM_URL} variant="primary" icon={ArrowUpRight} onClick={closeMenu}>
+            Acessar Plataforma
           </Button>
         </div>
       </div>
 
-      {/* Overlay escuro por baixo do painel */}
       {menuOpen && (
         <div
           className={styles.overlay}

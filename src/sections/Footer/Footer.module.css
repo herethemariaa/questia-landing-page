@@ -1,107 +1,63 @@
 .footer {
-  background-color: #0E1E38;
-  color: #94A3B8;
-  padding: var(--space-16) 0 var(--space-8);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #0B1930;
+  color: rgba(255, 255, 255, 0.75);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px 0;
+  font-size: 13.5px;
 }
 
-.inner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-12);
-}
-
-.topRow {
+.foot {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--space-10);
+  align-items: center;
   flex-wrap: wrap;
+  gap: 16px;
 }
 
-.brandCol {
-  max-width: 320px;
-}
-
-.brand {
+.left {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  margin-bottom: var(--space-3);
+  gap: 10px;
+  font-weight: 600;
 }
 
-.brandIcon {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  border-radius: var(--radius-sm);
+.icon {
+  border-radius: 6px;
 }
 
-.brandName {
-  font-size: var(--text-2xl);
-  font-weight: 900;
-  color: var(--color-white);
-  letter-spacing: -0.02em;
-}
-
-.tagline {
-  font-size: var(--text-sm);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.navTitle {
-  font-size: var(--text-sm);
+.brandTitle {
+  font-family: var(--font-display);
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-white);
-  margin-bottom: var(--space-4);
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
 }
 
-.linksList {
+.sep {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.right {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+  align-items: center;
 }
 
 .link {
-  font-size: var(--text-sm);
-  color: #94A3B8;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-amber-light);
+  font-weight: 700;
+  text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .link:hover {
-  color: var(--color-amber);
+  color: #FFFFFF;
+  text-decoration: underline;
 }
 
-.contactEmail {
-  font-size: var(--text-sm);
-}
-
-.bottomRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  padding-top: var(--space-8);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  font-size: var(--text-xs);
-  color: #64748B;
-}
-
-.credits {
-  font-weight: 600;
-}
-
-@media (max-width: 768px) {
-  .topRow {
-    flex-direction: column;
-    gap: var(--space-8);
-  }
-
-  .bottomRow {
+@media (max-width: 680px) {
+  .foot {
     flex-direction: column;
     align-items: flex-start;
   }

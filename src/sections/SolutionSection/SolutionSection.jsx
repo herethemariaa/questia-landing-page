@@ -1,81 +1,66 @@
-import iconQuestia from '../../assets/icon-questia.png';
-import { SOLUTION } from '../../data/content';
+import { ArrowRight, CheckCircle2, HeartHandshake, BookOpen, Layers } from 'lucide-react';
+import { SHIFT } from '../../data/content';
 import styles from './SolutionSection.module.css';
 
 /**
- * SolutionSection — apresenta o Questia como a resposta ao problema.
- * Layout de duas colunas: texto à esquerda, mockup visual à direita.
+ * SolutionSection — A virada pedagógica baseada no Slide 5 e 6.
+ * Paleta refinada com fundo azul marinho profundo e toques quentes dosados (sem sobrecarga de laranja).
  */
 export function SolutionSection() {
   return (
-    <section id="solucao" className={styles.section} aria-label="A solução do Questia">
-      <div className={`${styles.inner} container`}>
+    <section id="solucao" className={styles.section} aria-label="A proposta de solução do Questia">
+      <div className="container">
+        <div className={styles.centerBlock}>
+          <span className={styles.badgeTop}>A Virada Pedagógica</span>
+          <h2 className={styles.question}>{SHIFT.question}</h2>
+          <p className={styles.subtext}>{SHIFT.description}</p>
+        </div>
 
-        {/* Coluna de texto */}
-        <div className={styles.textCol}>
-          <span className={styles.label}>A Solução</span>
-          <h2 className={styles.title}>{SOLUTION.title}</h2>
-          <p className={styles.description}>{SOLUTION.description}</p>
-          <div className={styles.pills}>
-            <span className={styles.pill}>📱 Mobile-first</span>
-            <span className={styles.pill}>🎯 Adaptativo</span>
-            <span className={styles.pill}>♿ Acessível</span>
-            <span className={styles.pill}>🤝 Colaborativo</span>
+        {/* Bloco de Contraste Direto */}
+        <div className={styles.shiftCard}>
+          <div className={styles.shiftSideOld}>
+            <span className={styles.tagOld}>A resposta punitiva convencional</span>
+            <p className={styles.textOld}>{SHIFT.from.text}</p>
+            <p className={styles.consequenceOld}>Gera desgaste diário com o aluno e não ensina autorregulação diante das telas.</p>
+          </div>
+
+          <div className={styles.arrowBridge} aria-hidden="true">
+            <ArrowRight size={24} />
+          </div>
+
+          <div className={styles.shiftSideNew}>
+            <span className={styles.tagNew}>A proposta do Questia</span>
+            <p className={styles.textNew}>{SHIFT.to.text}</p>
+            <p className={styles.consequenceNew}>Transforma o tempo de celular em sessões ativas com retenção comprovada.</p>
           </div>
         </div>
 
-        {/* Coluna visual — mockup do app */}
-        <div className={styles.visualCol} aria-hidden="true">
-          <div className={styles.appMockup}>
-            {/* Header do app */}
-            <div className={styles.appTop}>
-              <img src={iconQuestia} alt="" width={28} height={28} className={styles.appLogo} />
-              <div>
-                <p className={styles.appUser}>Bom dia, Alice!</p>
-                <p className={styles.appRole}>Estudante · 7º Ano</p>
-              </div>
+        {/* 3 Pilares de Apoio Real */}
+        <div className={styles.pillarsRow}>
+          <div className={styles.pillar}>
+            <div className={styles.pillarIconBox} aria-hidden="true">
+              <HeartHandshake size={22} />
             </div>
-
-            {/* Progresso */}
-            <div className={styles.appSection}>
-              <p className={styles.appSectionTitle}>Seu progresso</p>
-              <div className={styles.progressRow}>
-                <span className={styles.progressSubj}>📐 Matemática</span>
-                <div className={styles.bar}>
-                  <div className={styles.barFill} style={{ width: '65%', background: 'linear-gradient(90deg,#F59E0B,#F97316)' }} />
-                </div>
-                <span className={styles.progressPct}>65%</span>
-              </div>
-              <div className={styles.progressRow}>
-                <span className={styles.progressSubj}>📚 Português</span>
-                <div className={styles.bar}>
-                  <div className={styles.barFill} style={{ width: '82%', background: 'linear-gradient(90deg,#3B82C4,#1B3A6E)' }} />
-                </div>
-                <span className={styles.progressPct}>82%</span>
-              </div>
-            </div>
-
-            {/* Jornada recomendada */}
-            <div className={styles.missionCard}>
-              <p className={styles.missionTag}>Recomendado para você</p>
-              <p className={styles.missionTitle}>Frações no dia a dia</p>
-              <p className={styles.missionMeta}>⏱ 25 min · Nível Médio</p>
-            </div>
-
-            <div className={styles.appBtn} role="presentation">Iniciar jornada →</div>
+            <h4>Estudo Saudável</h4>
+            <p>Abordagem colaborativa em vez de punitiva, acolhendo a energia do jovem em um ambiente motivador.</p>
           </div>
 
-          {/* Badges flutuantes */}
-          <div className={`${styles.floatBadge} ${styles.badgeTopLeft}`}>
-            <span className={styles.badgeNum}>5</span>
-            <span className={styles.badgeText}>etapas de aprendizagem</span>
+          <div className={styles.pillar}>
+            <div className={styles.pillarIconBox} aria-hidden="true">
+              <BookOpen size={22} />
+            </div>
+            <h4>Retenção Científica</h4>
+            <p>Substitui a leitura passiva pela Prática de Recuperação e pela Repetição Espaçada calculada.</p>
           </div>
-          <div className={`${styles.floatBadge} ${styles.badgeBotRight}`}>
-            <span className={styles.badgeNum}>2</span>
-            <span className={styles.badgeText}>módulos SOS</span>
+
+          <div className={styles.pillar}>
+            <div className={styles.pillarIconBox} aria-hidden="true">
+              <Layers size={22} />
+            </div>
+            <h4>Dinamismo Antidistração</h4>
+            <p>Jornadas intercaladas de curta duração que combatem a fadiga mental e o abandono de tarefas.</p>
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -1,0 +1,161 @@
+.section {
+  background: var(--color-paper);
+  padding: 84px 0;
+  color: var(--color-ink);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.h2 {
+  font-size: clamp(32px, 4.4vw, 50px);
+  font-weight: 800;
+  margin: 14px 0 16px;
+  max-width: 22ch;
+  color: var(--color-ink);
+}
+
+.lead {
+  font-size: clamp(17px, 1.4vw, 19px);
+  color: var(--color-ink-soft);
+  max-width: 62ch;
+  line-height: 1.65;
+  margin-bottom: 44px;
+}
+
+/* Grid de Cenários (Estilo Exato da Referência) */
+.scenGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.scen {
+  background: #FFFFFF;
+  border: 1.5px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.scen:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px -10px rgba(15, 23, 42, 0.08);
+}
+
+.pick {
+  border-color: var(--color-orange);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 100%);
+  box-shadow: 0 16px 36px -10px rgba(249, 115, 22, 0.15);
+}
+
+.pickBadge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--color-orange);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.letter {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-paper-2);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.pick .letter {
+  background: var(--color-orange);
+  color: #FFFFFF;
+}
+
+.scenTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+
+.what {
+  font-size: 14px;
+  color: var(--color-ink-soft);
+  line-height: 1.55;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.metricBlock {
+  margin-bottom: 16px;
+}
+
+.coverLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+/* Barra Segmentada de Progresso (Estilo Referência) */
+.segmentBar {
+  display: flex;
+  gap: 4px;
+  height: 8px;
+}
+
+.segmentBar i {
+  flex: 1;
+  background: #E2E8F0;
+  border-radius: 2px;
+  font-style: normal;
+}
+
+.segmentBar i.on {
+  background: var(--color-orange);
+}
+
+.pick .segmentBar i.on {
+  background: linear-gradient(90deg, var(--color-amber), var(--color-orange));
+}
+
+.risk {
+  font-size: 12px;
+  color: #DC2626;
+  line-height: 1.45;
+  font-weight: 600;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-line);
+}
+
+.riskSuccess {
+  font-size: 12px;
+  color: #15803D;
+  line-height: 1.45;
+  font-weight: 600;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-line);
+}
+
+@media (max-width: 900px) {
+  .scenGrid {
+    grid-template-columns: 1fr;
+  }
+}

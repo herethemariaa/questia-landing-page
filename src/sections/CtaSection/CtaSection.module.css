@@ -1,37 +1,49 @@
 .section {
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
-  padding: var(--space-20) 0;
-  color: var(--color-white);
+  background: linear-gradient(135deg, #132B50 0%, #1B3A6E 100%);
+  padding: 84px 0;
+  color: #FFFFFF;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .inner {
-  max-width: 680px;
+  max-width: 740px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
+}
+
+.badgeLine {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 183, 3, 0.15);
+  border: 1px solid rgba(255, 183, 3, 0.35);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--color-amber-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
 }
 
 .title {
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 900;
+  font-size: clamp(32px, 4.2vw, 48px);
+  font-weight: 800;
   line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: var(--space-4);
   color: #FFFFFF;
+  margin-bottom: 16px;
 }
 
 .description {
-  font-size: var(--text-lg);
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
-  margin-bottom: var(--space-8);
+  font-size: clamp(16px, 1.3vw, 18px);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.65;
+  margin-bottom: 32px;
 }
 
-.actions {
+.action {
   display: flex;
   justify-content: center;
 }

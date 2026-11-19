@@ -1,59 +1,77 @@
-
 # Arquitetura da Landing Page — Questia
 
-## 1. Visão geral
+> Documentação técnica atualizada da estrutura, organização e fluxo de renderização da página institucional do Questia.
 
-A landing page do Questia é a interface institucional
-responsável por apresentar a plataforma, sua proposta
-educacional e seus principais recursos.
+## 1. Sobre o Projeto
 
-## 2. Tecnologias
+O **Questia** é uma plataforma educacional idealizada pela equipe Conexão Lamarr durante o **Hacktudo 2026**.  
+O projeto foi desenvolvido para enfrentar o desafio do uso de smartphones no ambiente escolar, transformando o aparelho de fonte de dispersão em um instrumento de estudo ativo e estruturado.
 
-- React: construção da interface.
-- JavaScript: lógica e comportamento.
-- CSS: estilização.
-- Vite: ambiente de desenvolvimento.
+## 2. Tecnologias & Dependências
 
-> Atualizar esta lista conforme as tecnologias reais
-> do repositório.
+- **React 18:** Construção declarativa da interface com componentes funcionais e hooks.
+- **Vite 5:** Bundler ultrarrápido com Hot Module Replacement (HMR).
+- **CSS Modules:** Estilização isolada por componente e seção, garantindo zero colisão de classes.
+- **Lucide React:** Biblioteca de ícones vetoriais padronizados e semânticos.
+- **Google Fonts:** Tipografia combinada de *Bricolage Grotesque* (títulos de impacto) e *Nunito* (corpo de texto de alta legibilidade).
 
-## 3. Organização do projeto
+## 3. Organização de Diretórios
 
-- components/: elementos reutilizáveis.
-- sections/: seções da landing page.
-- layouts/: estruturas compartilhadas.
-- pages/: composição das páginas.
-- assets/: recursos visuais.
-- styles/: estilos globais.
-- data/: conteúdos organizados.
+```
+questia-landing-page/
+├── public/
+│   ├── icon-questia.png        # Favicon e imagem pública do app
+│   ├── prototipo-prof.png      # Tela real do dashboard do professor
+│   └── prototipo-prof1.png     # Tela real de gestão de turma e BNCC
+├── src/
+│   ├── assets/
+│   │   ├── icon-questia.png    # Ícone do aplicativo
+│   │   ├── prototipo-prof.png  # Tela real do dashboard do professor
+│   │   └── prototipo-prof1.png # Tela real de gestão de turma e BNCC
+│   ├── components/
+│   │   ├── Button/             # Botões primário, outline e dark com suporte a ícones
+│   │   ├── FeatureCard/        # Fichas pautadas de estudo com abas e selos
+│   │   ├── Navbar/             # Barra fixa com blur, marca e menu responsivo
+│   │   └── Star12/             # Estrela solar de 12 pontas característica do Questia
+│   ├── sections/
+│   │   ├── HeroSection/        # Apresentação do dilema real e mockup 3D do aluno
+│   │   ├── ProblemSection/     # Diagnóstico com dados da TIC Kids 2025 e OCDE PISA
+│   │   ├── SolutionSection/    # A virada pedagógica (pergunta reflexiva do Slide 5)
+│   │   ├── HowItWorksSection/  # A jornada em 5 estações (Explorar ao Revisar)
+│   │   ├── TeacherSection/     # A Visão do Educador: Telas reais do protótipo com abas interativas
+│   │   ├── FeaturesSection/    # Módulos SOS Matemática e SOS Leitura
+│   │   ├── AudienceSection/    # Valor para Alunos, Professores e Escolas
+│   │   ├── TeamSection/        # Conexão Lamarr, Hacktudo 2026 e ODS da ONU
+│   │   ├── CtaSection/         # Chamada de conversão direta para o MVP
+│   │   └── Footer/             # Rodapé institucional limpo
+│   ├── layouts/
+│   │   └── MainLayout.jsx      # Layout estrutural com skip link de acessibilidade
+│   ├── pages/
+│   │   └── LandingPage.jsx     # Orquestração ordenada das seções narrativas
+│   ├── data/
+│   │   └── content.js          # Textos, dados de pesquisa e links centralizados
+│   ├── styles/
+│   │   └── global.css          # Design tokens, cores dos slides, texturas e reset
+│   ├── App.jsx
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vite.config.js
+```
 
-## 4. Responsabilidade das camadas
+## 4. Fluxo de Renderização
 
-### Components
-Elementos reutilizáveis da interface.
-
-### Sections
-Seções independentes que compõem a landing page.
-
-### Pages
-Composição das seções na ordem de exibição.
-
-### Layouts
-Estruturas compartilhadas entre páginas.
-
-### Styles
-Estilos globais e variáveis visuais.
-
-## 5. Fluxo de renderização
-
-main.jsx → App.jsx → Layout → LandingPage
-→ Sections → Components.
-
-## 6. Diretrizes arquiteturais
-
-- Separar responsabilidades.
-- Evitar duplicação de código.
-- Priorizar componentes reutilizáveis.
-- Manter a landing page independente
-  dos módulos internos da plataforma.
-- Garantir responsividade e acessibilidade.
+```
+main.jsx ➔ App.jsx ➔ MainLayout (Skip Link + Navbar)
+               └── LandingPage
+                     ├── HeroSection
+                     ├── ProblemSection
+                     ├── SolutionSection
+                     ├── HowItWorksSection
+                     ├── TeacherSection (Dashboard & BNCC)
+                     ├── FeaturesSection
+                     ├── AudienceSection
+                     ├── TeamSection
+                     ├── CtaSection
+                     └── Footer
+```

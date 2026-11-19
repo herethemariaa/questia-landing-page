@@ -2,16 +2,16 @@ import { HeroSection } from '../sections/HeroSection/HeroSection';
 import { ProblemSection } from '../sections/ProblemSection/ProblemSection';
 import { SolutionSection } from '../sections/SolutionSection/SolutionSection';
 import { HowItWorksSection } from '../sections/HowItWorksSection/HowItWorksSection';
+import { TeacherSection } from '../sections/TeacherSection/TeacherSection';
 import { FeaturesSection } from '../sections/FeaturesSection/FeaturesSection';
 import { AudienceSection } from '../sections/AudienceSection/AudienceSection';
-import { ImpactSection } from '../sections/ImpactSection/ImpactSection';
+import { TeamSection } from '../sections/TeamSection/TeamSection';
 import { CtaSection } from '../sections/CtaSection/CtaSection';
 import { Footer } from '../sections/Footer/Footer';
 
 /**
- * LandingPage — composição completa da landing page Questia.
- * Ordem definida em docs/conteudo.md:
- * Hero → Problema → Solução → Como funciona → Funcionalidades → Para quem é → Impacto → CTA final → Footer
+ * LandingPage — Composição da narrativa institucional do Questia
+ * incluindo a perspectiva do aluno e as telas reais do protótipo do professor.
  */
 export function LandingPage() {
   return (
@@ -20,9 +20,10 @@ export function LandingPage() {
       <ProblemSection />
       <SolutionSection />
       <HowItWorksSection />
+      <TeacherSection />
       <FeaturesSection />
       <AudienceSection />
-      <ImpactSection />
+      <TeamSection />
       <CtaSection />
       <Footer />
     </>

@@ -1,0 +1,194 @@
+.section {
+  background-color: var(--color-blue-dark);
+  padding: 92px 0;
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Selo Institucional */
+.visualCol {
+  display: flex;
+  justify-content: center;
+}
+
+.teamBadgeCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
+  padding: 40px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 32px 64px -16px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 380px;
+}
+
+.logoFrame {
+  width: 90px;
+  height: 90px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.teamLogo {
+  border-radius: 18px;
+}
+
+.badgeLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.badgeEvent {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--color-amber-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.teamName {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.teamTag {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 24px;
+}
+
+.odsContainer {
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.odsTitle {
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.odsBadges {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.odsPill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid;
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+}
+
+.odsNum {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.odsLbl {
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* Lado Direito: Conteúdo */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.h2 {
+  font-size: clamp(36px, 4.5vw, 54px);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 16px 0 6px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-amber-light);
+  margin-bottom: 18px;
+}
+
+.story {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.lamarrTribute {
+  background: rgba(255, 255, 255, 0.06);
+  border-left: 3px solid var(--color-amber-gold);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 20px 24px;
+  margin-bottom: 32px;
+}
+
+.tributeTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.tributeIcon {
+  color: var(--color-amber-gold);
+}
+
+.tributeTop h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-amber-light);
+}
+
+.lamarrTribute p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+.actionRow {
+  display: flex;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

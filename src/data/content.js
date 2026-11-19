@@ -1,206 +1,268 @@
 /**
- * content.js — Conteúdo centralizado da landing page Questia
- *
- * Todos os textos, dados e links são definidos aqui para facilitar
- * atualizações sem precisar editar os componentes individualmente.
+ * content.js — Narrativa institucional autêntica do Questia
+ * 
+ * Baseada estritamente nos dados de pesquisa dos slides do Hacktudo 2026
+ * (TIC Kids Online Brasil 2025 e Relatório OCDE PISA) e no protótipo funcional.
  */
 
 export const PLATFORM_URL = 'https://questia-mvp.netlify.app';
 
-/* ---- Navegação ---- */
 export const NAV_LINKS = [
   { label: 'Início',          href: '#inicio' },
-  { label: 'O Problema',      href: '#problema' },
-  { label: 'A Solução',       href: '#solucao' },
-  { label: 'Como Funciona',   href: '#como-funciona' },
-  { label: 'Funcionalidades', href: '#funcionalidades' },
+  { label: 'O Dilema Real',   href: '#problema' },
+  { label: 'A Proposta',      href: '#solucao' },
+  { label: 'As 5 Estações',   href: '#metodologia' },
+  { label: 'Painel Docente',  href: '#professor' },
+  { label: 'Módulos SOS',     href: '#modulos' },
+  { label: 'Conexão Lamarr',  href: '#equipe' },
 ];
 
-/* ---- Hero ---- */
 export const HERO = {
-  tagline:     'Uma jornada de aprendizado sem barreiras',
-  title:       'A tecnologia pode ser parte da aprendizagem, não uma distração.',
+  badge: 'Hacktudo 2026 · Equipe Conexão Lamarr',
+  tagline: 'Uma jornada de aprendizado sem barreiras',
+  titlePrimary: 'O celular já está na sala de aula.',
+  titleHighlight: 'A questão é: ele vai distrair ou vai ensinar?',
   description:
-    'O Questia transforma o uso da tecnologia em uma experiência de aprendizagem mais interativa, acessível e significativa, conectando estudantes, professores e conhecimento.',
-  ctaPrimary:   { label: 'Conheça o Questia',  href: PLATFORM_URL },
-  ctaSecondary: { label: 'Como funciona',       href: '#como-funciona' },
+    'Em vez de uma guerra diária para proibir o smartphone, o Questia canaliza a curiosidade do estudante em missões ativas de 15 a 25 minutos com recuperação de conceitos em Matemática e Leitura.',
+  ctaPrimary: { label: 'Conhecer o Protótipo MVP', href: PLATFORM_URL },
+  ctaSecondary: { label: 'Como a Metodologia Funciona', href: '#metodologia' },
+  badges: [
+    'Sem leitura passiva',
+    'Ciclo de 5 estações',
+    'Apoio direto ao docente'
+  ]
 };
 
-/* ---- O Problema ---- */
 export const PROBLEM = {
-  title:
-    'A escola mudou. A forma de aprender também precisa evoluir.',
-  description:
-    'Os smartphones fazem parte do cotidiano dos estudantes. O desafio é transformar essa presença em uma oportunidade de aprendizagem, aproximando a tecnologia da realidade escolar.',
+  badge: 'O Diagnóstico Real',
+  title: 'A atenção fragmentada em sala não se resolve apenas com proibições.',
+  lead:
+    'Os dados mostram um cenário claro: o smartphone já é o principal meio de acesso do jovem brasileiro. O desafio educacional contemporâneo é transformar o tempo de tela passivo em prática intelectual com propósito.',
+  
   stats: [
     {
-      value:  '92%',
-      label:  'dos brasileiros de 9 a 17 anos são usuários de internet',
+      value: '92%',
+      label: 'dos brasileiros de 9 a 17 anos são usuários de internet',
+      detail: '78% acessam através do telefone celular várias vezes ao dia.',
       source: 'TIC Kids Online Brasil 2025',
     },
     {
-      value:  '3,4h',
-      label:  'por dia em dispositivos digitais para lazer nos países da OCDE',
-      source: 'OCDE 2025',
+      value: '3,4h',
+      label: 'por dia em telas apenas para lazer nos países da OCDE',
+      detail: 'Mais 3 horas diárias para estudos, gerando sobrecarga de estímulos rápidos.',
+      source: 'Relatório OCDE PISA 2025',
     },
     {
-      value:  '81%',
-      label:  'pesquisaram para fazer trabalhos escolares',
+      value: '81%',
+      label: 'pesquisaram na internet para fazer trabalhos escolares',
+      detail: 'O estudante já usa o aparelho para estudar, mas sem método de fixação.',
       source: 'TIC Kids Online Brasil 2025',
     },
   ],
-  impacts: [
-    {
-      title:       'Atenção',
-      description: 'Lidar com os diversos estímulos digitais no ambiente escolar.',
-    },
-    {
-      title:       'Engajamento',
-      description: 'Aproximar os conteúdos da realidade dos alunos.',
-    },
-    {
-      title:       'Inclusão',
-      description: 'Reconhecer diferentes ritmos e formas de aprender.',
-    },
-  ],
+
+  ocdeQuote: {
+    quote:
+      '“As notas em leitura, matemática e ciências atingiram seus níveis mais baixos desde que os dados começaram a ser coletados, em 2000. Também estamos observando uma leitura mais apressada, com os alunos percorrendo o texto às pressas e dando respostas erradas rapidamente.”',
+    author: 'Mathias Cormann, Secretário-Geral da OCDE',
+    source: 'Agência Brasil sobre pesquisa OCDE PISA 2025',
+  },
+
   whoSuffers: [
     {
-      group: 'Alunos',
-      items: ['Menor retenção de conteúdo', 'Saúde mental abalada'],
+      target: 'Alunos',
+      title: 'Leitura apressada e estresse',
+      items: [
+        'Menor retenção de conteúdo na memória de longo prazo.',
+        'Saúde mental abalada pela constante sobrecarga de estímulos digitais.'
+      ]
     },
     {
-      group: 'Professores',
-      items: ['Precisam buscar novas formas de manter a atenção dos alunos'],
+      target: 'Professores',
+      title: 'Disputa contra algoritmos',
+      items: [
+        'Desgaste diário tentando competir com notificações e vídeos curtos.',
+        'Necessidade urgente de ferramentas que tornem a prática em aula dinâmica.'
+      ]
     },
     {
-      group: 'Escolas',
-      items: ['Resultados que afetam a reputação da instituição'],
-    },
-  ],
+      target: 'Escolas',
+      title: 'Defasagem persistente',
+      items: [
+        'Queda nos índices nacionais de leitura e raciocínio lógico.',
+        'Dificuldade de orientar o uso saudável de telas na comunidade escolar.'
+      ]
+    }
+  ]
 };
 
-/* ---- A Solução ---- */
-export const SOLUTION = {
-  title:
-    'E se a tecnologia se tornasse uma aliada da aprendizagem?',
+export const SHIFT = {
+  question: 'E se fosse possível mudar essa realidade sem confiscar o aparelho?',
   description:
-    'O Questia é uma plataforma educacional que busca criar experiências de aprendizagem mais dinâmicas, participativas e acessíveis. Por meio de atividades interativas, incentiva a curiosidade, a autonomia dos estudantes e apoia o trabalho dos professores.',
+    'A plataforma Questia foi desenhada para sair da abordagem punitiva e criar um ambiente incentivador de aprendizagem ativa, conectando alunos e professores.',
+  from: {
+    label: 'A resposta convencional',
+    text: '“Como restringir e recolher o celular para que o aluno não se distraia?”'
+  },
+  to: {
+    label: 'A resposta do Questia',
+    text: '“Como guiar o celular em missões de 15 minutos que fazem sentido pedagógico?”'
+  }
 };
 
-/* ---- Como Funciona (5 etapas) ---- */
-export const HOW_IT_WORKS = {
-  title: 'Aprender é um processo. Cada etapa importa.',
-  steps: [
+export const METHODOLOGY = {
+  badge: 'Metodologia Pedagógica',
+  title: 'Aprender é um processo. Cada estação importa.',
+  subtitle:
+    'Inspirada no ciclo cognitivo ativo, cada aula no Questia é uma jornada organizada em cinco estações progressivas:',
+  stations: [
     {
-      number:      '01',
-      name:        'Explorar',
-      description: 'Despertar a curiosidade e descobrir novos conteúdos.',
+      num: '01',
+      name: 'Explorar',
+      focus: 'Curiosidade',
+      description: 'Contato inicial contextualizado com o tema, conectando o assunto com vivências reais do estudante.',
     },
     {
-      number:      '02',
-      name:        'Praticar',
-      description: 'Desenvolver conhecimentos por meio de atividades e desafios.',
+      num: '02',
+      name: 'Praticar',
+      focus: 'Desenvolvimento',
+      description: 'Resolução de desafios graduais com feedback imediato para desenvolver o raciocínio sem medo de errar.',
     },
     {
-      number:      '03',
-      name:        'Aplicar',
-      description: 'Utilizar o que foi aprendido em situações práticas.',
+      num: '03',
+      name: 'Aplicar',
+      focus: 'Vida Real',
+      description: 'Aplicação prática do conhecimento em situações cotidianas (descontos, receitas, gráficos de notícias).',
     },
     {
-      number:      '04',
-      name:        'Explicar',
-      description: 'Organizar ideias e compartilhar o conhecimento.',
+      num: '04',
+      name: 'Explicar',
+      focus: 'Efeito Feynman',
+      description: 'O aluno organiza as próprias ideias e comunica o raciocínio com suas palavras para fixar o aprendizado.',
     },
     {
-      number:      '05',
-      name:        'Revisar',
-      description: 'Retomar conteúdos, reconhecer avanços e identificar dificuldades.',
+      num: '05',
+      name: 'Revisar',
+      focus: 'Repetição Espaçada',
+      description: 'Retomada periódica de conteúdos em intervalos calculados, identificando dúvidas antes que se tornem defasagens.',
     },
   ],
+  scientificPillar: {
+    title: 'Dinamismo Antidistração & Retenção Científica',
+    description:
+      'Para evitar a fadiga mental que leva o jovem a abandonar aplicativos educativos tradicionais, o Questia utiliza a Prática Intercalada (alternando tipos de exercícios) e a Prática de Recuperação, substituindo a leitura passiva pela resolução ativa.',
+  }
 };
 
-/* ---- Funcionalidades ---- */
-export const FEATURES = {
-  title: 'Recursos que aproximam o conhecimento dos estudantes.',
+export const MODULES = {
+  badge: 'Recursos do Protótipo',
+  title: 'Módulos desenhados para as maiores defasagens da Educação Básica',
   items: [
     {
-      icon:        '📐',
-      title:       'SOS Matemática',
+      id: 'math',
+      tag: 'Cálculo & Lógica',
+      title: 'SOS Matemática',
       description:
-        'Trilha adaptativa para cada aluno, com apoio para explorar conceitos, praticar exercícios e desenvolver o raciocínio lógico.',
-      available: true,
+        'Trilha adaptativa para cada aluno, com apoio para explorar conceitos fundamentais: frações no cotidiano, potenciação, geometria das formas e raciocínio lógico.',
+      status: 'Disponível no MVP',
+      highlight: 'Exemplo: Frações no dia a dia (25 min)'
     },
     {
-      icon:        '📚',
-      title:       'SOS Leitura',
+      id: 'reading',
+      tag: 'Fluência & Linguagem',
+      title: 'SOS Leitura',
       description:
-        'Incentivo à leitura com acompanhamento, interpretação de textos e desenvolvimento de habilidades de linguagem.',
-      available: true,
+        'Incentivo à leitura e interpretação sem pressão excessiva. O aluno acompanha metas individuais, lê trechos selecionados e treina a compreensão crítica.',
+      status: 'Disponível no MVP',
+      highlight: 'Exemplo: Interpretação de contos e notícias'
     },
     {
-      icon:        '♿',
-      title:       'Acessibilidade',
+      id: 'teacher',
+      tag: 'Painel Docente',
+      title: 'Área do Professor',
       description:
-        'Recursos para ampliar as possibilidades de participação, respeitando diferentes ritmos e formas de aprender.',
-      available: true,
+        'Acompanhamento do andamento da turma (atividades entregues, alunos ativos e livros lidos) com alertas para intervenções pedagógicas pontuais.',
+      status: 'Interface Protótipo',
+      highlight: 'Visão por turma (ex.: 7º Ano C) e BNCC'
     },
     {
-      icon:        '🎯',
-      title:       'Aprendizagem Interativa',
+      id: 'a11y',
+      tag: 'Equidade & Acesso',
+      title: 'Acessibilidade & Estudo Saudável',
       description:
-        'Atividades e desafios que estimulam a experimentação, a construção do conhecimento e a autonomia dos estudantes.',
-      available: true,
-    },
-  ],
+        'Abordagem colaborativa em vez de punitiva: check-in emocional do estudante no início da sessão e suporte a diferentes ritmos de aprendizagem.',
+      status: 'Diretriz Central',
+      highlight: 'Alinhado aos ODS 3, 4 e 10 da ONU'
+    }
+  ]
 };
 
-/* ---- Para quem é ---- */
 export const AUDIENCE = {
-  title: 'Uma experiência que conecta diferentes pessoas da educação.',
-  groups: [
+  badge: 'Impacto Coletivo',
+  title: 'Uma plataforma de estudos que auxilia tanto alunos quanto professores',
+  cards: [
     {
-      icon:        '🎓',
-      title:       'Estudantes',
-      description: 'Incentivo à autonomia, curiosidade e participação ativa no próprio processo de aprendizagem.',
+      target: 'Para o Aluno',
+      role: 'Protagonismo & Autonomia',
+      description: 'O estudante estuda sem a sensação de estar sendo vigiado ou punido. As sessões têm início, meio e fim claros, com comemoração real de cada conquista.',
+      bullets: [
+        'Check-in de energia antes de iniciar',
+        'Jornadas em 5 passos com tempo estimado',
+        'Histórico de foco individual, sem ranking tóxico'
+      ]
     },
     {
-      icon:        '👩‍🏫',
-      title:       'Professores',
-      description: 'Apoio para tornar as atividades pedagógicas mais dinâmicas, com acompanhamento do progresso da turma.',
+      target: 'Para o Professor',
+      role: 'Apoio ao Trabalho Pedagógico',
+      description: 'O professor deixa de gastar energia brigando contra a tela e ganha um aliado para engajar a turma em atividades com sentido.',
+      bullets: [
+        'Mapa visual de habilidades da turma',
+        'Identificação rápida de defasagens comuns',
+        'Sugestões de intervenção em sala'
+      ]
     },
     {
-      icon:        '🏫',
-      title:       'Escolas',
-      description: 'Uma proposta que conecta inovação, inclusão e aprendizagem ao cotidiano institucional.',
-    },
-  ],
+      target: 'Para a Escola',
+      role: 'Uso Saudável da Tecnologia',
+      description: 'Uma resposta pedagógica consistente para o dilema do celular, alinhada aos padrões de educação inclusiva e de qualidade.',
+      bullets: [
+        'Tecnologia como aliada do currículo',
+        'Redução do atrito disciplinar',
+        'Alinhamento com diretrizes da BNCC'
+      ]
+    }
+  ]
 };
 
-/* ---- Visão e Impacto ---- */
-export const IMPACT = {
-  title:
-    'Não queremos substituir a educação. Queremos ampliar suas possibilidades.',
-  description:
-    'O Questia acredita que a tecnologia deve estar a serviço das pessoas e do conhecimento. Seu propósito é contribuir para uma educação conectada à realidade dos estudantes, que respeite diferentes formas de aprender e valorize o papel dos professores.',
+export const TEAM = {
+  badge: 'Origem & Propósito',
+  title: 'Conexão Lamarr',
+  subtitle: 'Projeto idealizado e desenvolvido durante o Hacktudo 2026',
+  story:
+    'Nossa equipe nasceu com um propósito bem delimitado: responder ao desafio de promover o uso consciente e saudável de smartphones nas escolas brasileiras.',
+  hedyLamarr: {
+    title: 'Por que o nome “Conexão Lamarr”?',
+    description:
+      'Prestamos homenagem a Hedy Lamarr (1914–2000), inventora extraordinária e atriz que desenvolveu o sistema de salto de frequência no rádio — a base tecnológica para o Wi-Fi, Bluetooth e GPS. Seu legado prova que imaginação e ciência caminham juntas para conectar o mundo.',
+  },
+  ods: [
+    { num: '03', label: 'Saúde e Bem-Estar', color: '#4C9F38' },
+    { num: '04', label: 'Educação de Qualidade', color: '#C5192D' },
+    { num: '10', label: 'Redução das Desigualdades', color: '#E11484' }
+  ]
 };
 
-/* ---- CTA Final ---- */
 export const CTA_FINAL = {
-  title:       'O futuro da aprendizagem começa com novas possibilidades.',
-  description: 'Conheça o Questia e descubra uma nova maneira de conectar tecnologia e educação.',
-  button:      { label: 'Conheça o Questia', href: PLATFORM_URL },
+  badge: 'Acesso Aberto',
+  title: 'Conheça o protótipo e experimente a proposta do Questia.',
+  description:
+    'Acesse a versão funcional desenvolvida no Netlify e navegue pelas trilhas de estudante e painel pedagógico.',
+  button: { label: 'Abrir Plataforma Questia', href: PLATFORM_URL }
 };
 
-/* ---- Footer ---- */
 export const FOOTER = {
-  tagline: 'Tecnologia com propósito. Aprendizagem com significado.',
-  links: [
-    { label: 'Início',          href: '#inicio' },
-    { label: 'O Problema',      href: '#problema' },
-    { label: 'A Solução',       href: '#solucao' },
-    { label: 'Funcionalidades', href: '#funcionalidades' },
-  ],
+  brand: 'QUESTIA',
+  tagline: 'Uma jornada de aprendizado sem barreiras.',
+  credits: 'Equipe Conexão Lamarr · Hacktudo 2026',
   contact: 'contato@questia.com.br',
-  credits: 'Desenvolvido pela equipe Conexão Lamarr',
-  year:    2026,
+  year: 2026,
 };

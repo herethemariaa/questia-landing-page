@@ -1,33 +1,44 @@
+import { Calculator, BookOpen, Users, HeartHandshake } from 'lucide-react';
 import { FeatureCard } from '../../components/FeatureCard/FeatureCard';
-import { FEATURES } from '../../data/content';
+import { MODULES } from '../../data/content';
 import styles from './FeaturesSection.module.css';
 
 /**
- * FeaturesSection — recursos e funcionalidades da plataforma.
+ * FeaturesSection — Módulos reais do Questia focados nas principais dores do currículo escolar.
  */
 export function FeaturesSection() {
+  const iconMap = {
+    math: Calculator,
+    reading: BookOpen,
+    teacher: Users,
+    a11y: HeartHandshake,
+  };
+
   return (
-    <section id="funcionalidades" className={styles.section} aria-label="Funcionalidades da plataforma">
+    <section id="modulos" className={styles.section} aria-label="Módulos de aprendizagem e recursos">
       <div className="container">
-        <div className={styles.sectionHeader}>
-          <span className={styles.label}>Funcionalidades</span>
-          <h2 className={styles.title}>{FEATURES.title}</h2>
-          <p className={styles.subtitle}>
-            Ferramentas pensadas para enriquecer o aprendizado e oferecer suporte sob medida a cada momento escolar.
-          </p>
+        <div className={styles.header}>
+          <span className="badge-stamp" style={{ background: 'rgba(255, 183, 3, 0.15)', color: 'var(--color-orange-deep)' }}>
+            {MODULES.badge}
+          </span>
+          <h2 className={styles.h2}>{MODULES.title}</h2>
         </div>
 
         <div className={styles.grid}>
-          {FEATURES.items.map((item) => (
-            <FeatureCard
-              key={item.title}
-              icon={item.icon}
-              title={item.title}
-              description={item.description}
-              badge={item.available ? undefined : 'Planejado'}
-              variant="dark"
-            />
-          ))}
+          {MODULES.items.map((m) => {
+            const Icon = iconMap[m.id] || Calculator;
+            return (
+              <FeatureCard
+                key={m.id}
+                icon={Icon}
+                tag={m.tag}
+                title={m.title}
+                description={m.description}
+                status={m.status}
+                highlight={m.highlight}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

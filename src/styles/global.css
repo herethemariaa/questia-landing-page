@@ -1,73 +1,72 @@
 /* ============================================================
    Design Tokens — Questia Landing Page
-   Baseados na identidade visual dos slides do protótipo
+   Identidade Oficial dos Slides do Hacktudo 2026
+   Paleta equilibrada, legibilidade máxima e acabamento de produto
    ============================================================ */
 
 :root {
-  /* --- Cores principais --- */
-  --color-blue-dark:    #1B3A6E; /* fundo hero, navbar, footer */
-  --color-blue-mid:     #2563A8; /* seções secundárias azuis */
-  --color-blue-section: #4A90D9; /* seções de destaque (slide 4, 8) */
-  --color-orange:       #F97316; /* laranja principal */
-  --color-orange-dark:  #EA580C; /* laranja escuro (blobs) */
-  --color-amber:        #F59E0B; /* âmbar dourado (botão primário, estrela) */
-  --color-amber-light:  #FCD34D; /* âmbar claro */
+  /* --- Cores Oficiais Equilibradas --- */
+  --color-blue-dark:    #0E1E38; /* Azul noturno profundo de alto contraste */
+  --color-blue-navy:    #16325C; /* Azul institucional dos slides */
+  --color-blue-royal:   #1D4ED8; /* Azul vivo para links e tags */
+  --color-blue-soft:    #F0F6FF; /* Fundo azul ultra suave */
+  
+  /* Laranja dosado (usado em acentos e detalhes, sem blocos berrantes) */
+  --color-orange:       #EA580C; /* Laranja equilibrado, menos saturado */
+  --color-orange-soft:  #F97316; /* Laranja solar para acentos finos */
+  --color-orange-tint:  #FFF7ED; /* Fundo âmbar suave */
+  --color-amber-gold:   #F59E0B; /* Dourado da estrela de 12 pontas */
+  --color-amber-light:  #FEF3C7; /* Amarelo suave de leitura */
+
+  /* Papel Escolar & Superfícies Claras */
+  --color-paper:        #F9FAFB; /* Off-white limpo de altíssima legibilidade */
+  --color-paper-warm:   #F3F4F6; /* Fundo secundário suave */
+  --color-paper-card:   #FFFFFF; /* Branco puro para cartões */
+  --color-line:         #E2E8F0; /* Linhas limpas e nítidas */
+  --color-line-dark:    rgba(255, 255, 255, 0.12);
+
+  /* Texto com Alto Contraste (WCAG AAA) */
+  --color-ink:          #0F172A; /* Quase preto / ardósia profundo para leitura máxima */
+  --color-ink-muted:    #334155; /* Cinza-ardósia escuro para parágrafos legíveis */
+  --color-text-light:   #F8FAFC; /* Branco nítido para fundos escuros */
+  --color-text-muted:   #CBD5E1; /* Cinza claro nítido para fundos escuros */
   --color-white:        #FFFFFF;
-  --color-navy-text:    #1B3A6E; /* texto sobre fundos claros */
-  --color-gray-soft:    #F3F4F6;
 
   /* --- Tipografia --- */
-  --font-primary: 'Nunito', sans-serif;
+  --font-display: 'Bricolage Grotesque', -apple-system, sans-serif;
+  --font-body:    'Nunito', -apple-system, sans-serif;
 
-  --text-xs:   0.75rem;    /* 12px */
-  --text-sm:   0.875rem;   /* 14px */
-  --text-base: 1rem;       /* 16px */
-  --text-lg:   1.125rem;   /* 18px */
-  --text-xl:   1.25rem;    /* 20px */
-  --text-2xl:  1.5rem;     /* 24px */
-  --text-3xl:  1.875rem;   /* 30px */
-  --text-4xl:  2.25rem;    /* 36px */
-  --text-5xl:  3rem;       /* 48px */
+  /* --- Escala Modular --- */
+  --text-xs:   0.8125rem;  /* 13px */
+  --text-sm:   0.9375rem;  /* 15px */
+  --text-base: 1.0625rem;  /* 17px — aumentado para leitura muito mais confortável */
+  --text-lg:   1.1875rem;  /* 19px */
+  --text-xl:   1.3125rem;  /* 21px */
+  --text-2xl:  1.5625rem;  /* 25px */
+  --text-3xl:  1.9375rem;  /* 31px */
+  --text-4xl:  2.375rem;   /* 38px */
+  --text-5xl:  3.25rem;    /* 52px */
 
-  /* --- Espaçamentos --- */
-  --space-1:  0.25rem;
-  --space-2:  0.5rem;
-  --space-3:  0.75rem;
-  --space-4:  1rem;
-  --space-6:  1.5rem;
-  --space-8:  2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-  --space-20: 5rem;
-  --space-24: 6rem;
-
-  /* --- Bordas e sombras --- */
-  --radius-sm:   8px;
-  --radius-md:   12px;
-  --radius-lg:   16px;
-  --radius-xl:   24px;
+  /* --- Raios de Borda --- */
+  --radius-xs:   6px;
+  --radius-sm:   10px;
+  --radius-md:   16px;
+  --radius-lg:   24px;
+  --radius-xl:   32px;
   --radius-full: 9999px;
 
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.14);
-  --shadow-nav:  0 2px 20px rgba(0, 0, 0, 0.18);
-  --shadow-btn:  0 8px 24px rgba(249, 115, 22, 0.35);
+  /* --- Layout --- */
+  --container-max:     1160px;
+  --container-padding: 1.5rem;
+  --navbar-height:     72px;
 
   /* --- Transições --- */
-  --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
-  --transition-slow: 400ms ease;
-
-  /* --- Container --- */
-  --container-max:     1200px;
-  --container-padding: 1.5rem;
-
-  /* --- Navbar height (usado como offset em seções) --- */
-  --navbar-height: 72px;
+  --transition-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 260ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ============================================================
-   Reset & Base
+   Reset e Base
    ============================================================ */
 
 *,
@@ -84,12 +83,27 @@ html {
 }
 
 body {
-  font-family: var(--font-primary);
-  color: var(--color-white);
-  background-color: var(--color-blue-dark);
-  line-height: 1.6;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background-color: var(--color-paper);
+  line-height: 1.7; /* Entrelinha mais aberta para conforto ocular */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--color-ink);
+}
+
+p {
+  color: var(--color-ink-muted);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  max-width: 65ch; /* Limite de caracteres por linha para não cansar */
 }
 
 img {
@@ -110,13 +124,9 @@ button {
   font-family: inherit;
 }
 
-ul {
+ul, ol {
   list-style: none;
 }
-
-/* ============================================================
-   Utilitários globais
-   ============================================================ */
 
 .container {
   width: 100%;
@@ -125,17 +135,26 @@ ul {
   padding: 0 var(--container-padding);
 }
 
-/* Acessibilidade: texto só para leitores de tela */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+/* Fundo com grid milimetrado suave */
+.pattern-grid {
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Etiqueta elegante com contraste nítido */
+.badge-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
 }
 
 /* Skip link de acessibilidade */
@@ -143,11 +162,11 @@ ul {
   position: absolute;
   top: -100%;
   left: 1rem;
-  background: var(--color-amber);
-  color: var(--color-navy-text);
+  background: var(--color-amber-gold);
+  color: var(--color-ink);
   padding: 0.5rem 1.25rem;
-  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
-  font-weight: 700;
+  border-radius: 0 0 var(--radius-xs) var(--radius-xs);
+  font-weight: 800;
   font-size: var(--text-sm);
   z-index: 9999;
   transition: top var(--transition-fast);
@@ -157,9 +176,8 @@ ul {
   top: 0;
 }
 
-/* Estilo de foco visível para acessibilidade de teclado */
 :focus-visible {
-  outline: 3px solid var(--color-amber);
+  outline: 3px solid var(--color-orange);
   outline-offset: 3px;
-  border-radius: var(--radius-sm);
+  border-radius: 6px;
 }

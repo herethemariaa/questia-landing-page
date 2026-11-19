@@ -1,169 +1,242 @@
 .section {
-  background: #FFFFFF;
-  padding: var(--space-24) 0;
-  color: var(--color-navy-text);
+  background-color: var(--color-paper);
+  padding: 92px 0;
+  color: var(--color-ink);
+  border-bottom: 1px solid var(--color-line);
 }
 
-/* ---- Cabeçalho ---- */
-.sectionHeader {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto var(--space-16);
+.header {
+  margin-bottom: 48px;
+  max-width: 780px;
 }
 
-.label {
-  display: inline-block;
-  font-size: var(--text-xs);
+.h2 {
+  font-size: clamp(32px, 4.2vw, 48px);
   font-weight: 800;
-  color: var(--color-orange);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: var(--space-4);
+  margin: 16px 0 16px;
+  color: var(--color-blue-navy);
+  line-height: 1.15;
 }
 
-.title {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  font-weight: 900;
-  color: var(--color-navy-text);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  margin-bottom: var(--space-4);
+.lead {
+  font-size: clamp(17.5px, 1.4vw, 20px);
+  color: var(--color-ink-muted);
+  line-height: 1.7;
 }
 
-.description {
-  font-size: var(--text-lg);
-  color: #4B5563;
-  line-height: 1.72;
-}
-
-/* ---- Estatísticas ---- */
+/* Grid de Métricas */
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
-  margin-bottom: var(--space-12);
+  gap: 24px;
+  margin-bottom: 36px;
 }
 
 .statCard {
-  position: relative;
-  text-align: center;
-  padding: var(--space-8) var(--space-6);
-  border-radius: var(--radius-xl);
-  background: #F8FAFC;
-  border: 1px solid #E5E7EB;
-  overflow: hidden;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  background: #FFFFFF;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: 32px 26px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(19, 43, 80, 0.04);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .statCard:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -12px rgba(19, 43, 80, 0.1);
 }
 
-/* Barra laranja no topo do card */
-.statCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-orange), var(--color-amber));
+.statTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
 }
 
-.statValue {
-  display: block;
-  font-size: clamp(2.5rem, 5vw, 3.75rem);
-  font-weight: 900;
+.statVal {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 4.8vw, 58px);
+  font-weight: 800;
   color: var(--color-orange);
-  line-height: 1;
   letter-spacing: -0.04em;
-  margin-bottom: var(--space-3);
+  line-height: 1;
 }
 
-.statLabel {
-  font-size: var(--text-base);
-  font-weight: 600;
-  color: var(--color-navy-text);
-  line-height: 1.4;
-  margin-bottom: var(--space-2);
+.iconBox {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: rgba(249, 115, 22, 0.1);
+  color: var(--color-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.statSource {
-  font-size: var(--text-xs);
-  color: #9CA3AF;
-  font-weight: 600;
+.statTitle {
+  font-size: 18px; /* Aumentado */
+  font-weight: 800;
+  color: var(--color-ink);
+  margin-bottom: 10px;
+  line-height: 1.35;
 }
 
-/* ---- Quem sofre ---- */
-.sufferBlock {
-  background: #F0F4FF;
+.statDetail {
+  font-size: 15.5px; /* Aumentado para leitura confortável */
+  color: var(--color-ink-muted);
+  line-height: 1.6;
+  margin-bottom: 22px;
+  flex: 1;
+}
+
+.statFoot {
+  padding-top: 14px;
+  border-top: 1px solid var(--color-line);
+  font-size: 12px;
+  font-weight: 800;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Card da Citação da OCDE */
+.quoteCard {
+  background: linear-gradient(135deg, #FFFDF9 0%, #FFF8F0 100%);
+  border: 1.5px solid #FED7AA;
+  border-radius: var(--radius-lg);
+  padding: 38px 34px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.quoteTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.quoteIcon {
+  color: var(--color-orange);
+}
+
+.quoteBadge {
+  font-size: 12px;
+  font-weight: 800;
+  color: #C2410C;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: #FFFFFF;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid #FED7AA;
+}
+
+.quoteText {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.45vw, 21px);
+  font-weight: 700;
+  color: #7C2D12;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.quoteAuthor {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: var(--color-ink-muted);
+}
+
+.quoteAuthor strong {
+  color: var(--color-ink);
+  font-weight: 800;
+}
+
+/* Quem Sofre com Isso? */
+.whoBlock {
+  background: var(--color-paper-warm);
+  border: 1px solid var(--color-line);
   border-radius: var(--radius-xl);
-  padding: var(--space-12);
+  padding: 38px 34px;
 }
 
-.sufferTitle {
-  font-size: var(--text-2xl);
-  font-weight: 900;
-  color: var(--color-navy-text);
-  text-align: center;
-  margin-bottom: var(--space-8);
+.whoHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 26px;
 }
 
-.sufferGrid {
+.whoIcon {
+  color: var(--color-orange);
+}
+
+.whoTitle {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-blue-navy);
+}
+
+.whoGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
+  gap: 22px;
 }
 
-.sufferCard {
+.whoCard {
   background: #FFFFFF;
-  border-radius: var(--radius-lg);
-  padding: var(--space-6);
-  border: 1px solid rgba(37, 99, 168, 0.12);
-  transition: box-shadow var(--transition-base);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 24px 22px;
 }
 
-.sufferCard:hover {
-  box-shadow: 0 8px 24px rgba(37, 99, 168, 0.1);
-}
-
-.sufferGroup {
-  font-size: var(--text-lg);
+.whoTarget {
+  display: inline-block;
+  font-size: 12px;
   font-weight: 800;
-  color: var(--color-blue-mid);
-  margin-bottom: var(--space-4);
-  padding-bottom: var(--space-3);
-  border-bottom: 2px solid var(--color-amber);
+  color: var(--color-blue-royal);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
 }
 
-.sufferItem {
+.whoHeading {
+  font-size: 17.5px;
+  font-weight: 800;
+  color: var(--color-ink);
+  margin-bottom: 14px;
+}
+
+.whoList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.whoList li {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-2);
-  font-size: var(--text-base);
-  color: #374151;
-  line-height: 1.5;
-  margin-bottom: var(--space-2);
+  gap: 10px;
+  font-size: 15px; /* Aumentado */
+  color: var(--color-ink-muted);
+  line-height: 1.55;
 }
 
-.bullet {
-  display: block;
+.dot {
   width: 6px;
   height: 6px;
-  background: var(--color-orange);
   border-radius: 50%;
-  flex-shrink: 0;
+  background: var(--color-orange);
   margin-top: 7px;
+  flex-shrink: 0;
 }
 
-/* ---- Responsividade ---- */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .statsGrid,
-  .sufferGrid {
+  .whoGrid {
     grid-template-columns: 1fr;
-  }
-  .sufferBlock {
-    padding: var(--space-8);
   }
 }
