@@ -1,0 +1,208 @@
+/* ---- Wrapper fixo ---- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0.875rem 0;
+  transition:
+    background-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.header.scrolled {
+  background-color: rgba(27, 58, 110, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-nav);
+}
+
+/* ---- Nav row ---- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  height: var(--navbar-height);
+}
+
+/* ---- Logo ---- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.brandIcon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.brandName {
+  font-size: var(--text-xl);
+  font-weight: 900;
+  color: var(--color-white);
+  letter-spacing: -0.02em;
+}
+
+/* ---- Links desktop ---- */
+.desktopLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex: 1;
+  justify-content: center;
+}
+
+.navLink {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.82);
+  transition: color var(--transition-fast);
+  padding: var(--space-2) 0;
+  position: relative;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-amber);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
+  transform-origin: left;
+}
+
+.navLink:hover {
+  color: var(--color-white);
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+/* ---- CTA desktop ---- */
+.desktopActions {
+  flex-shrink: 0;
+}
+
+/* ---- Hambúrguer ---- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-2);
+  z-index: 1001; /* acima do painel mobile */
+  position: relative;
+}
+
+.bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-white);
+  border-radius: 2px;
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-fast);
+}
+
+/* Animação X */
+.barTopOpen { transform: translateY(7px) rotate(45deg); }
+.barMidOpen { opacity: 0; transform: scaleX(0); }
+.barBotOpen { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---- Painel mobile ---- */
+.mobilePanel {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(300px, 85vw);
+  background-color: var(--color-blue-dark);
+  flex-direction: column;
+  padding: calc(var(--navbar-height) + var(--space-8)) var(--space-8) var(--space-8);
+  gap: var(--space-6);
+  transform: translateX(100%);
+  transition: transform var(--transition-slow);
+  z-index: 999;
+  box-shadow: -4px 0 32px rgba(0, 0, 0, 0.35);
+  overflow-y: auto;
+}
+
+.mobilePanelOpen {
+  transform: translateX(0);
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.mobileLinkItem {
+  display: block;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: color var(--transition-fast), padding-left var(--transition-base);
+}
+
+.mobileLinkItem:hover {
+  color: var(--color-white);
+  padding-left: var(--space-2);
+}
+
+.mobileCta {
+  margin-top: var(--space-4);
+}
+
+.mobileCta > * {
+  width: 100%;
+}
+
+/* ---- Overlay ---- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* ============================================================
+   Responsividade
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .desktopLinks {
+    gap: var(--space-6);
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .desktopLinks,
+  .desktopActions {
+    display: none;
+  }
+
+  .mobilePanel {
+    display: flex;
+  }
+}

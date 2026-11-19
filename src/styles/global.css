@@ -1,0 +1,165 @@
+/* ============================================================
+   Design Tokens — Questia Landing Page
+   Baseados na identidade visual dos slides do protótipo
+   ============================================================ */
+
+:root {
+  /* --- Cores principais --- */
+  --color-blue-dark:    #1B3A6E; /* fundo hero, navbar, footer */
+  --color-blue-mid:     #2563A8; /* seções secundárias azuis */
+  --color-blue-section: #4A90D9; /* seções de destaque (slide 4, 8) */
+  --color-orange:       #F97316; /* laranja principal */
+  --color-orange-dark:  #EA580C; /* laranja escuro (blobs) */
+  --color-amber:        #F59E0B; /* âmbar dourado (botão primário, estrela) */
+  --color-amber-light:  #FCD34D; /* âmbar claro */
+  --color-white:        #FFFFFF;
+  --color-navy-text:    #1B3A6E; /* texto sobre fundos claros */
+  --color-gray-soft:    #F3F4F6;
+
+  /* --- Tipografia --- */
+  --font-primary: 'Nunito', sans-serif;
+
+  --text-xs:   0.75rem;    /* 12px */
+  --text-sm:   0.875rem;   /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg:   1.125rem;   /* 18px */
+  --text-xl:   1.25rem;    /* 20px */
+  --text-2xl:  1.5rem;     /* 24px */
+  --text-3xl:  1.875rem;   /* 30px */
+  --text-4xl:  2.25rem;    /* 36px */
+  --text-5xl:  3rem;       /* 48px */
+
+  /* --- Espaçamentos --- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* --- Bordas e sombras --- */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.14);
+  --shadow-nav:  0 2px 20px rgba(0, 0, 0, 0.18);
+  --shadow-btn:  0 8px 24px rgba(249, 115, 22, 0.35);
+
+  /* --- Transições --- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* --- Container --- */
+  --container-max:     1200px;
+  --container-padding: 1.5rem;
+
+  /* --- Navbar height (usado como offset em seções) --- */
+  --navbar-height: 72px;
+}
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-white);
+  background-color: var(--color-blue-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ============================================================
+   Utilitários globais
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Acessibilidade: texto só para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip link de acessibilidade */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--color-amber);
+  color: var(--color-navy-text);
+  padding: 0.5rem 1.25rem;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  z-index: 9999;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Estilo de foco visível para acessibilidade de teclado */
+:focus-visible {
+  outline: 3px solid var(--color-amber);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}

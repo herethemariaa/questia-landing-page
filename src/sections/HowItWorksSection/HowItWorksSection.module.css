@@ -1,0 +1,143 @@
+.section {
+  background: #F8FAFC;
+  padding: var(--space-24) 0;
+  color: var(--color-navy-text);
+}
+
+/* ---- Cabeçalho ---- */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.label {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 800;
+  color: var(--color-orange);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 900;
+  color: var(--color-navy-text);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* ---- Wrapper dos passos ---- */
+.stepsWrapper {
+  position: relative;
+}
+
+.connectLine {
+  position: absolute;
+  /* Alinhado ao centro dos círculos (36px do topo do step) */
+  top: 36px;
+  left: calc(10% + 36px);
+  right: calc(10% + 36px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-amber), var(--color-orange), var(--color-amber));
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---- Lista de etapas ---- */
+.stepsList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-4);
+  position: relative;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+/* Círculo numerado */
+.stepCircle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-amber), var(--color-orange));
+  color: white;
+  font-size: var(--text-xl);
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.35);
+}
+
+/* Card da etapa */
+.stepCard {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  border: 1px solid #E5E7EB;
+  text-align: center;
+  width: 100%;
+  transition:
+    box-shadow var(--transition-base),
+    transform var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.stepCard:hover {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-3px);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.stepName {
+  font-size: var(--text-lg);
+  font-weight: 900;
+  color: var(--color-navy-text);
+  margin-bottom: var(--space-2);
+}
+
+.stepDesc {
+  font-size: var(--text-sm);
+  color: #4B5563;
+  line-height: 1.6;
+}
+
+/* ---- Responsividade ---- */
+@media (max-width: 1024px) {
+  .stepsList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .connectLine {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .stepsList {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .step {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .stepCircle {
+    width: 56px;
+    height: 56px;
+    font-size: var(--text-base);
+  }
+  .stepCard {
+    text-align: left;
+  }
+}

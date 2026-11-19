@@ -1,0 +1,169 @@
+.section {
+  background: #FFFFFF;
+  padding: var(--space-24) 0;
+  color: var(--color-navy-text);
+}
+
+/* ---- Cabeçalho ---- */
+.sectionHeader {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--space-16);
+}
+
+.label {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 800;
+  color: var(--color-orange);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 900;
+  color: var(--color-navy-text);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+
+.description {
+  font-size: var(--text-lg);
+  color: #4B5563;
+  line-height: 1.72;
+}
+
+/* ---- Estatísticas ---- */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+.statCard {
+  position: relative;
+  text-align: center;
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-xl);
+  background: #F8FAFC;
+  border: 1px solid #E5E7EB;
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+/* Barra laranja no topo do card */
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-orange), var(--color-amber));
+}
+
+.statValue {
+  display: block;
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 900;
+  color: var(--color-orange);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: var(--space-3);
+}
+
+.statLabel {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-navy-text);
+  line-height: 1.4;
+  margin-bottom: var(--space-2);
+}
+
+.statSource {
+  font-size: var(--text-xs);
+  color: #9CA3AF;
+  font-weight: 600;
+}
+
+/* ---- Quem sofre ---- */
+.sufferBlock {
+  background: #F0F4FF;
+  border-radius: var(--radius-xl);
+  padding: var(--space-12);
+}
+
+.sufferTitle {
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  color: var(--color-navy-text);
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.sufferGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.sufferCard {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  border: 1px solid rgba(37, 99, 168, 0.12);
+  transition: box-shadow var(--transition-base);
+}
+
+.sufferCard:hover {
+  box-shadow: 0 8px 24px rgba(37, 99, 168, 0.1);
+}
+
+.sufferGroup {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--color-blue-mid);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--color-amber);
+}
+
+.sufferItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--text-base);
+  color: #374151;
+  line-height: 1.5;
+  margin-bottom: var(--space-2);
+}
+
+.bullet {
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: var(--color-orange);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+/* ---- Responsividade ---- */
+@media (max-width: 768px) {
+  .statsGrid,
+  .sufferGrid {
+    grid-template-columns: 1fr;
+  }
+  .sufferBlock {
+    padding: var(--space-8);
+  }
+}
