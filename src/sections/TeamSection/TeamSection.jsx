@@ -2,7 +2,7 @@ import { ArrowUpRight, Sparkles } from 'lucide-react';
 import iconQuestia from '../../assets/icon-questia.png';
 import { Star12 } from '../../components/Star12/Star12';
 import { Button } from '../../components/Button/Button';
-import { TEAM, PLATFORM_URL } from '../../data/content';
+import { TEAM } from '../../data/content';
 import styles from './TeamSection.module.css';
 
 /**
@@ -42,7 +42,7 @@ export function TeamSection() {
 
         {/* Lado Direito: A História e o Tributo a Hedy Lamarr */}
         <div className={styles.contentCol}>
-          <span className="badge-stamp" style={{ background: 'rgba(255, 183, 3, 0.15)', color: 'var(--color-amber-light)' }}>
+          <span className="badge-stamp" style={{ background: 'rgba(245, 158, 11, 0.15)', color: 'var(--color-amber-light)' }}>
             {TEAM.badge}
           </span>
           <h2 className={styles.h2}>{TEAM.title}</h2>
@@ -58,8 +58,8 @@ export function TeamSection() {
           </div>
 
           <div className={styles.actionRow}>
-            <Button href={PLATFORM_URL} variant="primary" icon={ArrowUpRight}>
-              Acessar Plataforma do Projeto
+            <Button href="#metodologia" variant="primary" icon={ArrowUpRight}>
+              Conheça a metodologia
             </Button>
           </div>
         </div>

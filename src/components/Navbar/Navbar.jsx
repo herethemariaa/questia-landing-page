@@ -79,7 +79,7 @@ export function Navbar() {
         {/* Botão de ação à direita */}
         <div className={styles.desktopActions}>
           <Button href={PLATFORM_URL} variant="primary" icon={ArrowUpRight}>
-            Acessar Plataforma
+            Acessar protótipo
           </Button>
         </div>
 
@@ -110,7 +110,7 @@ export function Navbar() {
         </ul>
         <div className={styles.mobileCta}>
           <Button href={PLATFORM_URL} variant="primary" icon={ArrowUpRight} onClick={closeMenu}>
-            Acessar Plataforma
+            Acessar protótipo
           </Button>
         </div>
       </div>

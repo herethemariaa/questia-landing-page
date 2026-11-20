@@ -31,6 +31,7 @@ export function Button({
         className={cls}
         target={isExternal ? '_blank' : undefined}
         rel={isExternal ? 'noopener noreferrer' : undefined}
+        onClick={onClick}
         {...props}
       >
         {content}

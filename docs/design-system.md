@@ -8,16 +8,20 @@ Este documento consolida a identidade visual, padrões de estilização e tokens
 
 | Token CSS | Hex / Valor | Uso |
 |---|---|---|
-| `--color-blue-dark` | `#1B3A6E` | Fundo principal da Hero, Navbar e Seção da Equipe |
-| `--color-blue-deep` | `#0F2447` | Azul noturno para contraste profundo e rodapé |
-| `--color-blue-mid` | `#2563A8` | Azul royal das interfaces internas e badges |
-| `--color-orange` | `#F97316` | Laranja solar, botões primários e marcadores de foco |
-| `--color-orange-dark`| `#EA580C` | Laranja escuro para gradientes e alertas |
-| `--color-amber` | `#F59E0B` | Âmbar dourado dos botões de ação e ícones de destaque |
-| `--color-amber-light`| `#FCD34D` | Texto de contraste e realce |
-| `--color-paper` | `#FBFBFA` | Fundo off-white limpo de alto contraste para leitura |
-| `--color-paper-2` | `#F3F2EE` | Fundo secundário suave para cartões e blocos de apoio |
-| `--color-line` | `#E2E0D8` | Linhas finas divisórias |
+| `--color-blue-dark` | `#0E1E38` | Fundo principal da Hero, Navbar e Seção da Equipe |
+| `--color-blue-deep` | `#0A172B` | Azul profundo para estados de interação |
+| `--color-blue-navy` | `#16325C` | Azul institucional para títulos e gradientes |
+| `--color-blue-royal` | `#1D4ED8` | Azul de apoio para links, ícones e badges |
+| `--color-blue-soft` | `#F0F6FF` | Fundo azul suave |
+| `--color-orange` | `#EA580C` | Laranja para botões e marcadores de foco |
+| `--color-orange-soft` | `#F97316` | Laranja solar para acentos |
+| `--color-orange-tint` | `#FFF7ED` | Fundo laranja suave |
+| `--color-amber-gold` | `#F59E0B` | Âmbar dourado dos botões de ação e ícones |
+| `--color-amber-light`| `#FEF3C7` | Amarelo suave para realces em fundos escuros |
+| `--color-paper` | `#F9FAFB` | Fundo off-white para leitura |
+| `--color-paper-warm` | `#F3F4F6` | Fundo secundário para cartões e blocos |
+| `--color-paper-card` | `#FFFFFF` | Superfície dos cartões |
+| `--color-line` | `#E2E8F0` | Linhas divisórias |
 | `--color-ink` | `#0F172A` | Cor de texto primária em fundos claros |
 | `--color-ink-soft` | `#475569` | Cor de texto secundária para descrições |
 
@@ -30,7 +34,13 @@ Este documento consolida a identidade visual, padrões de estilização e tokens
 
 ---
 
-## 3. Componentes de Estilização Recorrentes
+## 3. Movimento
+
+- **Interações rápidas:** `220ms` com curva de desaceleração suave.
+- **Interações de superfície:** `360ms` para hover, elevação e mudanças de estado.
+- **Movimento reduzido:** animações e rolagem suave são desativadas quando solicitadas pelo sistema operacional.
+
+## 4. Componentes de Estilização Recorrentes
 
 ### 3.1. Eyebrow com Linha Gradiente (`.eyebrow`)
 Marcador de seção em caixa alta com linha de gradiente de 28px antes do texto:

@@ -24,7 +24,7 @@ export const HERO = {
   titleHighlight: 'A questão é: ele vai distrair ou vai ensinar?',
   description:
     'Em vez de uma guerra diária para proibir o smartphone, o Questia canaliza a curiosidade do estudante em missões ativas de 15 a 25 minutos com recuperação de conceitos em Matemática e Leitura.',
-  ctaPrimary: { label: 'Conhecer o Protótipo MVP', href: PLATFORM_URL },
+  ctaPrimary: { label: 'Conhecer a proposta', href: '#solucao' },
   ctaSecondary: { label: 'Como a Metodologia Funciona', href: '#metodologia' },
   badges: [
     'Sem leitura passiva',
@@ -252,11 +252,11 @@ export const TEAM = {
 };
 
 export const CTA_FINAL = {
-  badge: 'Acesso Aberto',
-  title: 'Conheça o protótipo e experimente a proposta do Questia.',
+  badge: 'Aprendizagem com propósito',
+  title: 'O próximo passo é transformar curiosidade em conhecimento.',
   description:
-    'Acesse a versão funcional desenvolvida no Netlify e navegue pelas trilhas de estudante e painel pedagógico.',
-  button: { label: 'Abrir Plataforma Questia', href: PLATFORM_URL }
+    'Descubra como o Questia conecta tecnologia, autonomia dos estudantes e apoio ao trabalho pedagógico.',
+  button: { label: 'Explorar a metodologia', href: '#metodologia' }
 };
 
 export const FOOTER = {

@@ -7,6 +7,7 @@
 :root {
   /* --- Cores Oficiais Equilibradas --- */
   --color-blue-dark:    #0E1E38; /* Azul noturno profundo de alto contraste */
+  --color-blue-deep:    #0A172B; /* Azul profundo para estados de interação */
   --color-blue-navy:    #16325C; /* Azul institucional dos slides */
   --color-blue-royal:   #1D4ED8; /* Azul vivo para links e tags */
   --color-blue-soft:    #F0F6FF; /* Fundo azul ultra suave */
@@ -28,6 +29,7 @@
   /* Texto com Alto Contraste (WCAG AAA) */
   --color-ink:          #0F172A; /* Quase preto / ardósia profundo para leitura máxima */
   --color-ink-muted:    #334155; /* Cinza-ardósia escuro para parágrafos legíveis */
+  --color-ink-soft:     #475569;
   --color-text-light:   #F8FAFC; /* Branco nítido para fundos escuros */
   --color-text-muted:   #CBD5E1; /* Cinza claro nítido para fundos escuros */
   --color-white:        #FFFFFF;
@@ -61,8 +63,9 @@
   --navbar-height:     72px;
 
   /* --- Transições --- */
-  --transition-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-base: 260ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-base: 360ms cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-slow: 520ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ============================================================
@@ -174,6 +177,17 @@ ul, ol {
 
 .skip-link:focus {
   top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 :focus-visible {

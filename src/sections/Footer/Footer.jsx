@@ -1,4 +1,4 @@
-import { PLATFORM_URL, FOOTER } from '../../data/content';
+import { FOOTER } from '../../data/content';
 import iconQuestia from '../../assets/icon-questia.png';
 import { Star12 } from '../../components/Star12/Star12';
 import styles from './Footer.module.css';
@@ -17,8 +17,8 @@ export function Footer() {
           <span>{FOOTER.credits}</span>
         </div>
         <div className={styles.right}>
-          <a href={PLATFORM_URL} target="_blank" rel="noopener noreferrer" className={styles.link}>
-            <span>Acessar questia-mvp.netlify.app</span>
+          <a href="#inicio" className={styles.link}>
+            <span>Voltar ao início</span>
             <Star12 size={12} color="var(--color-amber-gold)" />
           </a>
         </div>

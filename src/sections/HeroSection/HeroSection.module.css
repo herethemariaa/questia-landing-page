@@ -1,6 +1,8 @@
 .hero {
   position: relative;
-  background-color: var(--color-blue-dark);
+  background:
+    radial-gradient(ellipse at 82% 18%, rgba(29, 78, 216, 0.2), transparent 34%),
+    linear-gradient(135deg, var(--color-blue-dark), var(--color-blue-navy));
   padding: calc(var(--navbar-height) + 3rem) 0 6rem;
   overflow: hidden;
   color: #FFFFFF;
@@ -151,12 +153,12 @@
   box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.7),
               0 0 0 1px rgba(255, 255, 255, 0.15);
   transform: rotate(2.5deg);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
   background: #000000;
 }
 
 .phoneWrapper:hover {
-  transform: rotate(0deg) translateY(-6px);
+  transform: rotate(0deg) translateY(-4px);
   box-shadow: 0 45px 85px -15px rgba(0, 0, 0, 0.8),
               0 0 0 2px rgba(245, 158, 11, 0.4);
 }

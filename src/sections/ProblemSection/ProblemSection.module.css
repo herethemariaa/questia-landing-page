@@ -1,5 +1,5 @@
 .section {
-  background-color: var(--color-paper);
+  background: linear-gradient(120deg, var(--color-blue-soft) 0%, var(--color-paper) 52%, var(--color-orange-tint) 100%);
   padding: 92px 0;
   color: var(--color-ink);
   border-bottom: 1px solid var(--color-line);
